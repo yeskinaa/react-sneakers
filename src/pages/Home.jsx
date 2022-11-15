@@ -10,10 +10,12 @@ function Home({
   onAddToCart,
   isLoading
 }) {
+
   const renderItems = () => {
     const filtredItems = items.filter((item) => 
       item.title.toLowerCase().includes(searchValue.toLowerCase())
     )
+
     return (isLoading ? Array(8).fill(<Card loading={isLoading}/>) : filtredItems).map((item, index) => (
       <Card
         id={item.id}
