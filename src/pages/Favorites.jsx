@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from '../components/Card';
-import { AppContext } from '../App';
+import AppContext from '../context';
 
 function Favorites() {
 
@@ -21,13 +21,10 @@ function Favorites() {
         {favorites
             .map((item, index) => (
               <Card
-                id={item.id}
                 key={index}
-                title={item.title}
-                price={item.price}
-                imageURL={item.imageURL}
                 onFavorite={(obj) => onAddToFavorite(obj)}
                 favorite={true}
+                {...item}
               />
             ))}
         </div>
