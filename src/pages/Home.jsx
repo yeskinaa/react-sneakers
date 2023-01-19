@@ -19,6 +19,7 @@ function Home({
     return (isLoading ? Array(8).fill(<Card loading={isLoading}/>) : filtredItems).map((item, index) => (
       <Card
         id={item.id}
+        parentId={item.parentId}
         key={index}
         title={item.title}
         price={item.price}
